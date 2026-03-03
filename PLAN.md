@@ -54,6 +54,20 @@ Enabling secure, decentralized synchronization between multiple agents.
 
 ---
 
+## 🔒 Phase 5: Liability Erasure & Proxy Sovereignty (Upcoming)
+*Deleting the target to eliminate the breach.*
+
+### 1. @privateClaw Proxy Integration
+- **Concept**: A lightweight, local Docker proxy that acts as a "Sovereign Privacy Substrate" between the agent and the cloud.
+- **Action**: Deploy `@privateClaw` as a mandatory sidecar for all external LLM inference.
+- **Mechanism**: 
+    - **Semantic Error Diffusion**: PII is dithered into "Semantic Mirages" (archetypes) before leaving the local perimeter.
+    - **Deterministic Tokenization**: Stateless masking using hardware-bound keys (HMAC-based) to ensure zero-vault dependency.
+    - **Local Re-hydration**: The LLM response is reconstructed at the edge (locally), ensuring the cloud provider never sees the "Material."
+- **Goal**: 0% PII Leakage / 100% Utility / Zero Material Liability.
+
+---
+
 ## 🏁 The North Star: The Invisible Shield
 The ultimate evolution of OpenBot is a system that is **Unfishable, Unleakable, and Unstoppable**. We don't build higher walls; we make the target disappear.
 
