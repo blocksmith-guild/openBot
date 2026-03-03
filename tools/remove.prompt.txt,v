@@ -1,4 +1,27 @@
-# TOOL: reversible removal (remove)
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2026.03.03.11.15.49;	author michelc;	state Exp;
+branches;
+next	;
+
+
+desc
+@tracking remove tool
+@
+
+
+1.1
+log
+@Refine remove.prompt.txt with .trash folder, RCS check-in, and conflict resolution mandates
+@
+text
+@# TOOL: reversible removal (remove)
 
 ## INTENT
 Safely and reversibly remove a file from the active workspace without permanent data loss.
@@ -20,3 +43,4 @@ Safely and reversibly remove a file from the active workspace without permanent 
 
 ---
 *"Nothing is ever truly gone; it just becomes a different kind of signal."*
+@

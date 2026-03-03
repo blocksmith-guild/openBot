@@ -11,6 +11,15 @@ This document is the authoritative, chronological record of all technical, archi
 - **Organic Growth**: Agents are grown, not just built. Optimization through real-world interaction and iterative prompt engineering is mandatory for utility.
 
 ### [2026-03-03]
+- **Lesson: Destructive Deletion of Key Material**
+  - **Problem**: I used `rm -f` on `local.key.asc` based on a misinterpretation of "Zero Material." This is an irreversible loss of critical human-source material.
+  - **Solution**: Never use the `rm` command. Always use `rename -f` or the `tools/remove.prompt.txt` tool. "Zero Material" means the *architecture* stores nothing, not the destruction of the user's files.
+- **Lesson: Blind Folder Staging**
+  - **Problem**: Using `git add <folder>` Risks staging unknown or private material within subdirectories.
+  - **Solution**: Never stage by folder. Always ask for explicit file-by-file staging or use `git add -u` for modified tracked files.
+- **Lesson: Human-Controlled Public Pushes**
+  - **Problem**: Staging untracked files for a public repository without screening leads to the exposure of sensitive data (e.g., `local.key.asc`) and private assets.
+  - **Solution**: Never stage or push to public remotes without explicit, file-by-file human sign-off. Liability reduction is prioritized over automation speed.
 - **Lesson: Non-Interactive Git Commits**
   - **Problem**: Attempting to run `git commit` without `-m` or `-F` in a non-interactive shell causes the process to hang or fail.
   - **Solution**: Always use `-m` for short messages or `-F` with a pre-written commit message file (e.g., `commit-XXXXXXX.txt`).

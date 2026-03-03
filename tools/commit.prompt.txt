@@ -16,6 +16,7 @@ Draft a high-signal, BlockSmith-aligned git commit message for the specified cha
 ## MANDATE
 - **Non-Interactive**: Always draft the message to a file (e.g., `commit-XXXXXXX.txt`) and use `git commit -a -F <file>`.
 - **Clinical & Authoritative**: No filler. High signal.
+- **Specific Staging**: Never use `git add <folder>`. Always ask the human to add untracked files, or use `git add -u` for modified tracked files.
 - **Verification**: Run `git status` after commit to confirm success.
 
 ---

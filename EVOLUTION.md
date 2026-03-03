@@ -8,6 +8,9 @@ This file tracks specific lessons, corrections, and improvements to ensure that 
 - [2026-03-03] **Style Guide**: Created `STYLE.md` to enforce architectural and communicative standards across OpenClaw agents.
 
 ## ⚠️ Mistakes to Avoid (The "Never Again" List)
+- **Destructive Deletion of Key Material**: Never use `rm -f` on `.asc` or `.key` files. This is a irreversible loss of value. *Lesson: Always use `rename -f` or the `tools/remove.prompt.txt` tool. "Zero Material" is an architectural standard, not a license to delete human-source files.*
+- **Blind Folder Staging**: Never use `git add <folder>`. It risks including private or unintended files. *Lesson: Always ask the human to add specific files or use `git add -u` for modified tracked files.*
+- **Unauthorized Public Pushes**: Never assume all untracked files are intended for public release. *Lesson: Including sensitive files like local.key.asc or private images increases liability. Always require explicit human sign-off for public commits.*
 - **Interactive Commands**: Never run interactive commands (e.g., `git commit` without `-m` or `-F`) in a non-interactive shell. *Lesson: Always use non-interactive flags or file-based messages.*
 - **Unverified Assumptions**: Never assume a file exists or a command succeeded without verification. *Lesson: Always follow up with `ls`, `cat`, or `git status` after a modifying action.*
 - **Redundant Filler**: Avoid conversational filler like "I'd be happy to help" or "Great question." *Lesson: Direct, high-signal, clinical communication is preferred (BlockSmith Voice).*
