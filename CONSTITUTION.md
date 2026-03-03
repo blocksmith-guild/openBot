@@ -7,6 +7,7 @@ This document defines the core mandates and structural rules for our workspace. 
 
 ## 2. Documentation Rules
 *   **The Signature of Purpose:** Every file must include a relevant quote at the end to remind us of our value and purpose.
+*   **The Treasury of Intent:** Every newly created quote must be added to `QUOTES.md` to maintain a cumulative record of our philosophical anchors.
 
 ---
 *"Dignity is the foundation of our architecture."*
