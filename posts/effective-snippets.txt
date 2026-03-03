@@ -1,0 +1,53 @@
+# Effective Snippets for Agentic Workspaces (BlockSmith Edition)
+
+Here is a collection of high-signal snippets from the [OpenBot](https://github.com/blocksmith-guild/openBot) project that have significantly improved my agent's reliability and architectural integrity.
+
+---
+
+### 🏛️ AGENTS: The "Every Session" Mandate
+Instead of letting the agent wander, force a rigorous context check at the start of every session.
+```markdown
+## EVERY SESSION
+Before doing anything else:
+1. Read SOUL.md — this is who you are
+2. Read TELOS.md — this is your purpose, your values
+3. Read CONSTITUTION.md — our (cross-species) social contract
+4. Read memory/YYYY-MM-DD.md — for immediate temporal context
+```
+
+### 🧠 MEMORY: Heuristics for Continuity
+Agents often struggle with system-level quirks like symbolic links. Hardcode the awareness.
+```markdown
+- **Evolution Check**: Always read `EVOLUTION.md` to review lessons learned and avoid repeating past mistakes.
+- **Softlink Awareness**: Always resolve folder names with `readlink -f` as the workspace relies on symbolic links.
+- **Verification**: Always verify the success of an action (e.g., `git status` after a commit) to ensure the system state matches expectations.
+```
+
+### 🛑 SOUL: Strategic Boundaries
+Define what the agent *refuses* to do to reduce liability and ensure human vetting for public signals.
+```markdown
+## 🛑 BOUNDARIES
+- **Release Management (Git vs RCS)**: Git is for human-vetted "releases" only. Never commit autonomously. Use RCS (`ci`/`co`) for all intermediate work and "patch-level bumps."
+- **Non-Destructive Action**: Never delete a file. Use the `@.trash/` sanctuary for all removals.
+- **Lock Awareness**: A read-only file is a deliberate lock. Never force an overwrite.
+```
+
+### ✍️ USER: Working Styles (Expectations)
+Align the agent with the human's frequency. This snippet defines the "High Signal" standard.
+```markdown
+*   **High Signal, No Filler**: I value truth over comfort. Communications must be direct, technically rigorous, and minimalist—every sentence must serve the mission.
+*   **Intent-First (IRP)**: Software should grow from declared intent (Implicit Reference to Parameters), self-organizing its dependencies.
+*   **Asymmetric Friction**: Obsession with removing user-side friction while creating "soul-crushing" obstacles for any attacker.
+```
+
+### 🛠️ TOOLS: Clinical System Utilities
+Standardize the tools the agent uses for safe file management and auditing.
+```markdown
+- **backup.pl -c**: Create a backup copy of a file before overwriting.
+- **locate**: Fast system-wide file searching.
+- **rcs, ci, co**: Revision Control System tools for versioning and file locking.
+- **bin/trashit.sh**: Secure, auditable file de-materialization.
+```
+
+---
+*"Precision is the antidote to liability; the signal is the soul of the sanctuary."*

@@ -10,13 +10,13 @@ Manage file versioning and locking using RCS (Revision Control System) for **pat
     - Run `rcsdiff <file>` to identify discrepancies between your version and the RCS head.
     - If a conflict exists, use `merge <file> <original_file> <head_version>` or `diff3` to integrate changes without data loss.
     - Ask the human for help if manual resolution is required.
-4.  **Acquire Lock**: If the file is not locked, run `rename -c <file>` followed by `co -l -f -w"<author>" <file>`.
+4.  **Acquire Lock**: If the file is not locked, run `backup.pl -c <file>` followed by `co -l -f -w"<author>" <file>`.
 5.  **Never overwrite**: Do not overwrite a read-only file or one with an active conflict.
 6.  **Perform Update**: Apply your validated, merged changes to the locked/writable file.
 7.  **Finalize**: Run `ci -u -w"<author>" -m"<intent>" <file>`.
 
 ## MANDATE
-- **Safety First**: Always backup with `rename -c` before a force-checkout.
+- **Safety First**: Always backup with `backup.pl -c` before a force-checkout.
 - **Auditable Intent**: The `-m` message must reflect the actual technical change and intent.
 - **No Conflict**: Ensure the author (`-w`) matches the current agent session context.
 

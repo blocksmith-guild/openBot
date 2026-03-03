@@ -1,9 +1,14 @@
-head	1.2;
+head	1.3;
 access;
 symbols;
 locks; strict;
 comment	@# @;
 
+
+1.3
+date	2026.03.03.15.04.47;	author michelc;	state Exp;
+branches;
+next	1.2;
 
 1.2
 date	2026.03.03.11.19.23;	author michelc;	state Exp;
@@ -21,9 +26,9 @@ desc
 @
 
 
-1.2
+1.3
 log
-@Add Proper RCS Initialization logic
+@Rename utility: transition from rename to backup.pl for better clarity
 @
 text
 @# TOOL: reversible removal (remove)
@@ -39,7 +44,7 @@ Safely and reversibly remove a file from the active workspace without permanent 
     - If a `.trash` directory exists in the project root:
         - Move the file to the `.trash` folder: `mv <file> .trash/`.
         - If a conflict exists (file already exists in `.trash`), use a versioned name: `<file>~1`, `<file>~2`, etc.
-    - If no `.trash` exists, use `rename -f <file>` to create a versioned backup in the current directory (e.g., `<file>~1`).
+    - If no `.trash` exists, use `backup.pl -f <file>` to create a versioned backup in the current directory (e.g., `<file>~1`).
 3.  **Git Update**: If the file is tracked by Git, perform a "deletion record": `git rm <file>`.
 4.  **Audit Trail**: Update any relevant `.lof` (List of Files) or `README.md` to reflect the removal.
 
@@ -50,6 +55,17 @@ Safely and reversibly remove a file from the active workspace without permanent 
 
 ---
 *"Nothing is ever truly gone; it just becomes a different kind of signal."*
+@
+
+
+1.2
+log
+@Add Proper RCS Initialization logic
+@
+text
+@d14 1
+a14 1
+    - If no `.trash` exists, use `rename -f <file>` to create a versioned backup in the current directory (e.g., `<file>~1`).
 @
 
 

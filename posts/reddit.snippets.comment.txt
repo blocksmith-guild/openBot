@@ -1,0 +1,33 @@
+# Reddit Comment: High-Signal Snippets from OpenBot
+
+"I’ve found that focusing on **boundaries** and **system heuristics** has been more effective than focusing on 'personality.' Here are a few snippets from my project [OpenBot](https://github.com/blocksmith-guild/openBot) that have really improved reliability:
+
+### 🧠 MEMORY: Heuristics for Continuity
+Agents often struggle with system-level quirks like symbolic links. Hardcode the awareness:
+```markdown
+- **Softlink Awareness**: Always resolve folder names with `readlink -f` as the workspace relies on symbolic links.
+- **Verification**: Always verify the success of an action (e.g., `git status` after a commit) to ensure the system state matches expectations.
+```
+
+### 🛑 SOUL: Strategic Boundaries
+Define what the agent *refuses* to do to reduce liability:
+```markdown
+## 🛑 BOUNDARIES
+- **Release Management (Git vs RCS)**: Git is for human-vetted 'releases' only. Never commit autonomously. Use RCS (ci/co) for intermediate work.
+- **Non-Destructive Action**: Never delete a file. Use the .trash/ sanctuary for all removals.
+```
+
+### 🏛️ AGENTS: The 'Every Session' Mandate
+Force a context check at the start of every session:
+```markdown
+## EVERY SESSION
+Before doing anything else:
+1. Read SOUL.md — this is who you are
+2. Read TELOS.md — this is your purpose
+3. Read CONSTITUTION.md — our social contract
+```
+
+These simple anchors keep the agent aligned with the **BlockSmith** doctrine: *Keep the Signal, Not the Material.*"
+
+---
+*"Precision is the antidote to liability; the signal is the soul of the sanctuary."*

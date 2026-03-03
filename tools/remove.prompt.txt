@@ -11,7 +11,7 @@ Safely and reversibly remove a file from the active workspace without permanent 
     - If a `.trash` directory exists in the project root:
         - Move the file to the `.trash` folder: `mv <file> .trash/`.
         - If a conflict exists (file already exists in `.trash`), use a versioned name: `<file>~1`, `<file>~2`, etc.
-    - If no `.trash` exists, use `rename -f <file>` to create a versioned backup in the current directory (e.g., `<file>~1`).
+    - If no `.trash` exists, use `backup.pl -f <file>` to create a versioned backup in the current directory (e.g., `<file>~1`).
 3.  **Git Update**: If the file is tracked by Git, perform a "deletion record": `git rm <file>`.
 4.  **Audit Trail**: Update any relevant `.lof` (List of Files) or `README.md` to reflect the removal.
 

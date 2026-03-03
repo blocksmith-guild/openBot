@@ -1,0 +1,18 @@
+# Reddit Comment: Architectural Approach to SOUL.md
+
+"I’ve been iterating on this exact problem. Standard `SOUL.md` files often focus too much on 'personality' and not enough on **Ontological Sovereignty** and **Liability Reduction**.
+
+In my project, [OpenBot](https://github.com/blocksmith-guild/openBot), I moved away from the generic 'be helpful' prompts and implemented a **'Zero Material'** doctrine. The core idea is that the SOUL should define what the agent *refuses* to observe or store, turning security into an architectural principle rather than a checkbox.
+
+Two things that have made a massive difference:
+1.  **Mandatory RCS/Git Boundaries**: The SOUL explicitly prohibits autonomous commits and destructive `rm` commands, enforcing a human-vetting loop for everything public.
+2.  **Persistent Evolution**: I paired the `SOUL.md` with an `EVOLUTION.md` and `LESSONS.md` layer. The agent doesn't just 'remember'—it extracts heuristics from its mistakes to ensure they are never repeated.
+
+If you're looking for a more clinical, boundary-heavy approach to agent identity,
+feel free to check out the [repo]: <https://github.com/blocksmith-guild/openBot/>
+It’s built on BlockSmith principles (Signal Velocity, Zero Liability)."
+
+---
+*"Precision is the antidote to liability; the signal is most powerful when it is shared."*
+
+[git]: https://github.com/blocksmith-guild/openBot/

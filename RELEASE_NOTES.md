@@ -4,6 +4,29 @@ This document tracks the official milestone releases of the OpenBot framework. E
 
 ---
 
+## [v1.0.2] - 2026-03-03
+### "The Resonant Shield"
+
+This release solidifies the project's security boundaries, organizational structure, and community engagement assets.
+
+### 🛡️ Security & Integrity Refinements
+- **RCS Conflict Resolution**: Implemented strict `rcsdiff`, `diff3`, and `merge` mandates to prevent data loss during intermediate versioning.
+- **Git/RCS Separation**: Formalized the security boundary—Git for human-vetted releases, RCS for granular patch-level bumps.
+- **Evolution Anchors**: Standardized `%LLM:` tags as mandatory architectural anchors for future intent refinement.
+- **Trash Sanctuary Security**: Integrated `.trash` into `.gitignore` and `.gitattributes` (enabling `git-crypt` for all archived material).
+
+### 🛠️ Tooling & Utility Evolution
+- **`bin/backup.pl`**: Transitioned the core renaming utility to a more self-explanatory naming convention.
+- **`tools/remove.prompt.txt`**: Enhanced with automated RCS check-ins, `.trash` support, and `*~n` conflict resolution.
+- **`tools/checkin.prompt.txt`**: Refined for patch-level security and conflict-aware locking.
+
+### 📁 Workspace & Governance
+- **`PLAN.md`**: Phase 3 officially defined as "Intent Refinement (The Clarity Engine)."
+- **`CONSTITUTION.md`**: Centralized all fundamental principles and boundary mandates.
+- **`posts/` Organization**: Consolidated strategic community outreach drafts (`REDDIT.md`, `reddit.snippets.comment.txt`).
+
+---
+
 ## [v1.0.0] - 2026-03-03
 ### "The Sovereign Spark"
 
