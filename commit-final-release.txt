@@ -1,0 +1,8 @@
+Docs: Finalize project README and boot workflow for public release
+
+- Transform generic `README.md` into high-signal BlockSmith: OpenBot documentation.
+- Refine `BOOT.md` startup instructions.
+- Ensure all repository anchors (mantras, mantras, mantras) are perfectly aligned.
+
+---
+*"Visibility is the first step toward universal sovereignty."*
