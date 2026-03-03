@@ -16,7 +16,13 @@ This file tracks specific lessons, corrections, and improvements to ensure that 
 - **Redundant Filler**: Avoid conversational filler like "I'd be happy to help" or "Great question." *Lesson: Direct, high-signal, clinical communication is preferred (BlockSmith Voice).*
 
 ## 🧠 Heuristics & Refined Strategies
-- **Secure De-materialization**: Always use `bin/trashit.sh` for file removals. It ensures RCS check-ins and thermodynamic stability (conflict resolution) in the `.trash` sanctuary.
+- **NHID Accountability**: Every autonomous action by an agent (Non-Human Identity) should be traceable to a human owner signature or specific session context.
+- **Pull-Only Protocol**: Prefer retrieval models where the client/agent "pulls" validated data, minimizing reliance on unvetted "pushed" inputs.
+- **RCS Conflict Resolution**: If a file is locked or a mismatch is detected, use `rcsdiff`, `diff3`, and `merge` to reconcile versions before checking in. Never force an overwrite that could cause data loss.
+- **Git/RCS Separation (Security)**: Git is for human-vetted milestone releases. Use RCS (`ci`/`co`) for all intermediate work and "patch-level bumps" to ensure a secure, auditable history.
+- **Git Pollution Prevention**: Never commit autonomously. Pollution is a security liability.
+- **Secure De-materialization**: Always use `bin/trashit.sh` for file removals.
+ It ensures RCS check-ins and thermodynamic stability (conflict resolution) in the `.trash` sanctuary.
 - **RCS Initialization**: If a `,v` file does not exist, initialize the RCS repository for the file using `ci -i -t-"<description>" <file>`.
 - **File Versioning**: Use `rename -c` for backups before any manual write/replace operation to ensure safety and version history.
 - **Deep Context Search**: Use `grep_search` and `locate` extensively before concluding a file or information is missing.

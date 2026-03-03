@@ -1,4 +1,7 @@
 node_modules/
 .trash/
+*prompt*
+*history*
 commit.txt
 *~1
+*,v

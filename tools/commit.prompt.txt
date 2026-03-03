@@ -14,6 +14,7 @@ Draft a high-signal, BlockSmith-aligned git commit message for the specified cha
 - **Footer**: Philosophical anchor/quote (e.g., *"Precision is the antidote to liability."*).
 
 ## MANDATE
+- **Release Only**: This tool is for milestone "releases" only. NEVER run autonomously. Git commits must be explicitly requested by the human user to avoid repository pollution.
 - **Non-Interactive**: Always draft the message to a file (e.g., `commit-XXXXXXX.txt`) and use `git commit -a -F <file>`.
 - **Clinical & Authoritative**: No filler. High signal.
 - **Specific Staging**: Never use `git add <folder>`. Always ask the human to add untracked files, or use `git add -u` for modified tracked files.

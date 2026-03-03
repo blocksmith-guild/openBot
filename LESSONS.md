@@ -10,7 +10,24 @@ This document is the authoritative, chronological record of all technical, archi
 - **Response Patterns as Strategic Assets**: Including real examples of good responses (with formatting) in `STYLE.md` significantly improves output quality.
 - **Organic Growth**: Agents are grown, not just built. Optimization through real-world interaction and iterative prompt engineering is mandatory for utility.
 
+### [Strategic & Architectural Lessons (from Prompt History Archive)]
+- **NHID Accountability**: Non-Human Identities (bots/APIs) must be anchored to a responsible human owner using ephemeral, deterministic POA tokens.
+- **TOFU Integrity**: Use "Record-Once, No-Update" for initial identity claims to ensure immutability and auditability.
+- **Symmetry of Silence**: Favor "Pull-Only" retrieval models over "Push-Based" inputs to achieve architectural immunity from many common attack vectors (e.g., RCE).
+- **The sqrt(10%) Rule**: Systemic change and critical mass in a resonant network only require the square root of 10% of the population.
+- **Liability Eraser**: "Zero Knowledge" is not just a privacy feature; it is a quantifiable reduction in enterprise breach liability.
+- **Sonic Manuals**: Music and rhythmic delivery (staccato articulation) are highly effective tools for teaching complex technical acronyms and architectural concepts.
+
 ### [2026-03-03]
+- **Lesson: Safe RCS Merging**
+  - **Problem**: Forcing a lock or overwriting a file in RCS can lead to the loss of intermediate changes made by other processes or humans.
+  - **Solution**: Implement a strict "Check before Lock" policy. Use `rcsdiff` to identify discrepancies and `merge`/`diff3` to reconcile changes. Prioritize data integrity over process speed.
+- **Lesson: Security Vetting via Git/RCS Separation**
+  - **Problem**: Autonomous Git commits create a security liability by pushing unvetted files to public repositories.
+  - **Solution**: Reserve Git for human-vetted "releases." Use RCS (`ci`/`co`) for all granular "patch-level bumps" and intermediate tracking. This ensures only human-verified content reaches the public.
+- **Lesson: Git-Pollution Prevention**
+  - **Problem**: Frequent small Git commits clutter the repository history and metadata.
+  - **Solution**: Prohibit autonomous Git commits.
 - **Lesson: Secure De-materialization (trashit.sh)**
   - **Problem**: Manually moving files to a trash directory is prone to audit gaps and filename conflicts.
   - **Solution**: Implemented `bin/trashit.sh`, which automates RCS check-ins, handles `*~n` conflict resolution, and ensures all "de-materialized" files are safely archived in a `.trash` sanctuary.

@@ -11,6 +11,9 @@ This document defines the core mandates and structural rules for our workspace. 
 
 ## ⚖️ 2. Boundary Mandates (Operational Guardrails)
 
+- **No Autonomous Git Commits:** Never perform a `git commit` autonomously. Git is reserved for milestone "releases" after explicit human vetting and verification.
+- **RCS for Patch-Level Bumps:** Use RCS (`ci`/`co`) as the primary mechanism for intermediate versioning (patch-level bumps) between Git releases.
+- **Strict RCS Conflict Management:** If a file is locked or a conflict is detected during an RCS operation, use `rcsdiff`, `diff3`, or `merge` to reconcile changes. Never overwrite a locked file or one with pending changes without a verified merge.
 - **Zero Destructive Commands:** Never use the `rm` command. All file removals must be performed using `rename -f` or the `tools/remove.prompt.txt` tool.
 - **Cryptographic Material Protection:** Never delete or move `.asc`, `.key`, `.der`, or `.pem` files without explicit human confirmation.
 - **Public Push Protocol:** Never stage, commit, or push files to a public repository without an explicit, file-by-file sign-off from the human user.

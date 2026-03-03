@@ -1,15 +1,19 @@
 # TOOL: rcs checkin (ci/co)
 
 ## INTENT
-Manage file versioning and locking using RCS (Revision Control System) following BlockSmith's safety and auditing standards.
+Manage file versioning and locking using RCS (Revision Control System) for **patch-level bumps** and intermediate tracking between Git releases. This ensures a secure, human-vetted history for the public repository.
 
 ## STRATEGY (The "Lock & Load" Phase)
-1.  **Check Status**: Use `rlog <file>` to identify the current head revision, author, and any active locks.
+1.  **Check Status**: Use `rlog <file>` to identify the head revision, author, and active locks.
 2.  **Initialize (If New)**: If no `,v` file exists, initialize with `ci -i -t-"<description>" <file>`.
-3.  **Acquire Lock**: If a writable file exists but is not locked, run `rename -c <file>` followed by `co -l -f -w"<author>" <file>`.
-4.  **Never overwrite**: do not overwrite a readonly file, ask for help or your human to do it
-5.  **Perform Update**: Apply changes to the locked/writable file.
-6.  **Finalize**: Run `ci -u -w"<author>" -m"<intent>" <file>`.
+3.  **Handle Active Lock**: If the file is locked by someone else:
+    - Run `rcsdiff <file>` to identify discrepancies between your version and the RCS head.
+    - If a conflict exists, use `merge <file> <original_file> <head_version>` or `diff3` to integrate changes without data loss.
+    - Ask the human for help if manual resolution is required.
+4.  **Acquire Lock**: If the file is not locked, run `rename -c <file>` followed by `co -l -f -w"<author>" <file>`.
+5.  **Never overwrite**: Do not overwrite a read-only file or one with an active conflict.
+6.  **Perform Update**: Apply your validated, merged changes to the locked/writable file.
+7.  **Finalize**: Run `ci -u -w"<author>" -m"<intent>" <file>`.
 
 ## MANDATE
 - **Safety First**: Always backup with `rename -c` before a force-checkout.

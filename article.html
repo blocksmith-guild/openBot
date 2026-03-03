@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockSmith: Beyond the Chatbot</title>
+    <!-- 
+      %LLM: Evolve this viewer to support multi-release selection (v1.0.0, etc.) 
+      and integrate a dynamic "Signal Strength" toggle to highlight architectural anchors.
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bs-cyan: #00ffff;
+            --bs-red: #f2163e;
+            --bs-deep-blue: #0a0e1a;
+            --bs-slate: rgba(28, 37, 51, 0.9);
+            --bs-text: #e0e6ed;
+            --bs-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bs-deep-blue);
+            background-image: linear-gradient(rgba(10, 14, 26, 0.8), rgba(10, 14, 26, 0.8)), url('assets/bsu-blue-red-padlock-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--bs-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+        }
+header {
+    width: 100%;
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(10, 14, 26, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 1000px;
+    width: calc(100% - 4rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+header img {
+    height: 32px;
+    margin: 0;
+    border: none;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--bs-cyan);
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-left: 1px solid rgba(0, 255, 255, 0.3);
+    padding-left: 1.5rem;
+    display: none; /* Hide on mobile */
+}
+
+@media (min-width: 768px) {
+    .tagline { display: block; }
+}
+
+.cta-button {
+    background: transparent;
+    border: 1px solid var(--bs-cyan);
+    color: var(--bs-cyan);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: var(--bs-cyan);
+    color: var(--bs-deep-blue);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+#container {
+    max-width: 800px;
+    width: calc(100% - 4rem);
+    background: var(--bs-slate);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    border-left: 4px solid var(--bs-cyan);
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    backdrop-filter: blur(5px);
+}
+</style>
+</head>
+<body>
+<header>
+<div class="nav-content">
+    <div class="logo-group">
+        <img src="assets/bsu-white-red-logo.svg" alt="BlockSmith Logo">
+        <span class="tagline">Signal Velocity. Zero Liability.</span>
+    </div>
+    <a href="https://github.com/blocksmith-guild/openBot" class="cta-button">Explore Sanctuary</a>
+</div>
+</header>
+
+    <div id="container">
+        <div id="loading" class="pulse">RETRIEVING SIGNAL...</div>
+        <article id="content"></article>
+        <footer>
+            © 2026 BlockSmith. Swiss-made digital sovereignty.
+        </footer>
+    </div>
+
+    <script>
+        const gh = 'https://raw.githubusercontent.com/blocksmith-guild';
+        const mdurl = gh + '/openBot/refs/heads/master/article.md';
+
+        async function fetchArticle() {
+            const content = document.getElementById('content');
+            const loading = document.getElementById('loading');
+            
+            try {
+                const response = await fetch(mdurl);
+                if (!response.ok) throw new Error('Signal Interrupted');
+                
+                let markdown = await response.text();
+                
+                // Strip the redundant copyright line to avoid duplication with the HTML footer
+                markdown = markdown.replace(/© 2026 BlockSmith\. Swiss-made digital sovereignty\./g, '');
+                
+                content.innerHTML = marked.parse(markdown);
+                loading.style.display = 'none';
+            } catch (error) {
+                loading.textContent = 'ERROR: SIGNAL LOST';
+                loading.classList.remove('pulse');
+                console.error(error);
+            }
+        }
+
+        fetchArticle();
+    </script>
+</body>
+</html>
