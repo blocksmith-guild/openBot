@@ -1,0 +1,22 @@
+# TOOL: git commit
+
+## INTENT
+Draft a high-signal, BlockSmith-aligned git commit message for the specified changes.
+
+## STRATEGY (The Research Phase)
+1.  **Analyze Context**: Run `git status` and `git diff` on the target files/directory.
+2.  **Review History**: Run `git log -n 3` to match the project's commit style (author, formatting, verbosity).
+3.  **Synthesize Change**: Summarize the technical "What" and the philosophical/strategic "Why".
+
+## FORMAT (The Voice)
+- **Title**: `<type>: <Short descriptive title>` (Types: Feat, Fix, Docs, Refactor, Chore).
+- **Body**: Bulleted list of technical changes.
+- **Footer**: Philosophical anchor/quote (e.g., *"Precision is the antidote to liability."*).
+
+## MANDATE
+- **Non-Interactive**: Always draft the message to a file (e.g., `commit-XXXXXXX.txt`) and use `git commit -a -F <file>`.
+- **Clinical & Authoritative**: No filler. High signal.
+- **Verification**: Run `git status` after commit to confirm success.
+
+---
+*"Every commit is a declaration of intent."*

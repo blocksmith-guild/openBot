@@ -1,4 +1,27 @@
-# AGENTS.MD - YOUR WORKSPACE
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2026.03.03.08.30.20;	author michelc;	state Exp;
+branches;
+next	;
+
+
+desc
+@code of conduct for agents
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@# AGENTS.MD - YOUR WORKSPACE
 
 This folder is home. Treat it that way.
 
@@ -189,3 +212,4 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 ---
 *"Nothing stored, nothing to steal. Incorruptibility is our baseline."*
+@

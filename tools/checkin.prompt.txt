@@ -1,0 +1,22 @@
+# TOOL: rcs checkin (ci/co)
+
+## INTENT
+Manage file versioning and locking using RCS (Revision Control System) following BlockSmith's safety and auditing standards.
+
+## STRATEGY (The "Lock & Load" Phase)
+1.  **Check Status**: Use `rlog <file>` to identify the current head revision, author, and any active locks.
+2.  **Acquire Lock**: If a writable file exists but is not locked, run `rename -c <file>` followed by `co -l -f -w"<author>" <file>`.
+3.  **Perform Update**: Apply changes to the locked/writable file.
+4.  **Finalize**: Run `ci -u -w"<author>" -m"<intent>" <file>`.
+
+## MANDATE
+- **Safety First**: Always backup with `rename -c` before a force-checkout.
+- **Auditable Intent**: The `-m` message must reflect the actual technical change and intent.
+- **No Conflict**: Ensure the author (`-w`) matches the current agent session context.
+
+## FORMAT (The Voice)
+- **Author**: Defaults to `aiagent` or current agent ID.
+- **Message**: Clinical and direct description of the version change.
+
+---
+*"Secrecy is structural integrity; versioning is temporal clarity."*

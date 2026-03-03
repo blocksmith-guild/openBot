@@ -1,11 +1,10 @@
 ## AGENTIC MEMORY
 
-- always start a chat with running this prompt "what is the title of this chat, the temporary folder, root folder, and json session files located in temporary chats subfolder, please have your response saved in json format"
-- allways evaluate folders name with (readlink -f) as most of them are accessed with softlinks
-- note: any directory may be a symbolic links, so verify the target with a `readlink -f $directory` to clarify doubt and or to avoid any executing dammaging action
+- **Evolution Check**: Always read `EVOLUTION.md` at the start of a session to review lessons learned and avoid repeating past mistakes.
+- **Initial Context**: Start every chat by running: "what is the title of this chat, the temporary folder, root folder, and json session files located in temporary chats subfolder, please have your response saved in json format."
+- **Softlink Awareness**: Always resolve folder names with `readlink -f` as the workspace relies heavily on symbolic links.
+- **Verification**: Always verify the success of an action (e.g., `git status` after a commit) to ensure the system state matches expectations.
 
-
-
-%LLM: compact this file: merge redundant information to have concise file without loosing information
+<!-- %LLM: This file is a concise mandate for agent persistence. Update it as new heuristics are developed. -->
 
 

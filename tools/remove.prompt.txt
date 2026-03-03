@@ -1,0 +1,16 @@
+# TOOL: reversible removal (remove)
+
+## INTENT
+Safely and reversibly remove a file from the active workspace without permanent data loss.
+
+## STRATEGY (The "Safety-Net" Phase)
+1.  **Backup/Versioning**: Use `rename -f <file>` to move the target file to a versioned backup name (e.g., `<file>~1`).
+2.  **RCS/Git Update**: If the file is tracked by RCS or Git, perform a "deletion record" (e.g., `ci -u -m"De-materialized: [reason]" <file>` or `git rm <file>`).
+3.  **Audit Trail**: Update any relevant `.lof` (List of Files) or `README.md` to reflect the change.
+
+## MANDATE
+- **Don't Delete**: Never use `rm -rf` on a file unless explicitly instructed by a high-privilege mandate.
+- **De-materialization**: Treat removal as a transformation from "Signal" to "History".
+
+---
+*"Nothing is ever truly gone; it just becomes a different kind of signal."*
