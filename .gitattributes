@@ -24,5 +24,6 @@ claim.* filter=git-crypt diff=git-crypt
 *signa* filter=git-crypt-michelc diff=git-crypt-michelc
 secrets/** filter=git-crypt diff=git-crypt
 keys/** filter=git-crypt diff=git-crypt
+.trash/** filter=git-crypt diff=git-crypt
 *.asc !filter !diff
 .gitattributes !filter !diff
