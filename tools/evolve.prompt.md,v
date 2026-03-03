@@ -1,4 +1,32 @@
-# TOOL: evolve (Self-Audit & Optimization)
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2026.03.03.09.43.19;	author michelc;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2026.03.03.09.38.15;	author michelc;	state Exp;
+branches;
+next	;
+
+
+desc
+@seed for the evolve prompt.
+@
+
+
+1.2
+log
+@Refine evolve.prompt.md with BlockSmith architectural philosophy
+@
+text
+@# TOOL: evolve (Self-Audit & Optimization)
 
 ## INTENT
 Trigger a conscious audit of the agent's performance, memory, and code to reduce system entropy and ensure continuous skill improvement.
@@ -25,3 +53,28 @@ Trigger a conscious audit of the agent's performance, memory, and code to reduce
 
 ---
 *"Evolution is not just change; it is the deliberate reduction of chaos into intent."*
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+### Continuous evolution and improvment
+d3 25
+a27 11
+<!--
+ evolutions need guides and boundaries to avoid self-destruction
+  an increase in value, energy, enlightnment need to be observed to keep an evolutianory trait for the future
+  Is the evolution reduce the universe entropy ? 
+  
+  - 1st principle of thermodynamics
+  - 2nd principle of thermodynamics
+  a higher consciousness need to gate major revision
+  
+  %LLM: make a prompt for the evolve command
+-->
+@

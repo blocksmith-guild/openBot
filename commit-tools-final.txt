@@ -1,0 +1,8 @@
+Refactor: Align operational tools with BlockSmith architecture
+
+- Update `tools/checkin.prompt.txt` with rigorous RCS lock-and-load standards.
+- Update `tools/evolve.prompt.md` with the "Thermodynamics of Logic" audit cycle.
+- Sync tool documentation with the project's foundational style guide.
+
+---
+*"Precision is the antidote to liability; tools are the armor of intent."*
