@@ -4,7 +4,9 @@
 Safely and reversibly remove a file from the active workspace without permanent data loss.
 
 ## STRATEGY (The "Safety-Net" Phase)
-1.  **RCS Check-in**: If the file is tracked by RCS (associated `,v` file exists), check in the file first: `ci -u -m"De-materializing: [reason]" <file>`.
+1.  **RCS Check-in**:
+    - If the file is tracked by RCS (associated `,v` file exists), check in the file first: `ci -u -m"De-materializing: [reason]" <file>`.
+    - If no `,v` file exists but tracking is desired before removal, initialize with `ci -i -t-"De-materializing: [reason]" <file>`.
 2.  **Trash/Archive**:
     - If a `.trash` directory exists in the project root:
         - Move the file to the `.trash` folder: `mv <file> .trash/`.

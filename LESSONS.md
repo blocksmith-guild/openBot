@@ -11,6 +11,9 @@ This document is the authoritative, chronological record of all technical, archi
 - **Organic Growth**: Agents are grown, not just built. Optimization through real-world interaction and iterative prompt engineering is mandatory for utility.
 
 ### [2026-03-03]
+- **Lesson: Proper RCS Initialization**
+  - **Problem**: Attempting to check in a file without an existing `,v` file requires an initial description.
+  - **Solution**: Use `ci -i -t-"<description>" <file>` to initialize the RCS tracking with a proper file header description.
 - **Lesson: Destructive Deletion of Key Material**
   - **Problem**: I used `rm -f` on `local.key.asc` based on a misinterpretation of "Zero Material." This is an irreversible loss of critical human-source material.
   - **Solution**: Never use the `rm` command. Always use `rename -f` or the `tools/remove.prompt.txt` tool. "Zero Material" means the *architecture* stores nothing, not the destruction of the user's files.

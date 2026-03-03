@@ -1,9 +1,14 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks; strict;
 comment	@# @;
 
+
+1.2
+date	2026.03.03.11.19.23;	author michelc;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2026.03.03.11.15.49;	author michelc;	state Exp;
@@ -16,9 +21,9 @@ desc
 @
 
 
-1.1
+1.2
 log
-@Refine remove.prompt.txt with .trash folder, RCS check-in, and conflict resolution mandates
+@Add Proper RCS Initialization logic
 @
 text
 @# TOOL: reversible removal (remove)
@@ -27,7 +32,9 @@ text
 Safely and reversibly remove a file from the active workspace without permanent data loss.
 
 ## STRATEGY (The "Safety-Net" Phase)
-1.  **RCS Check-in**: If the file is tracked by RCS (associated `,v` file exists), check in the file first: `ci -u -m"De-materializing: [reason]" <file>`.
+1.  **RCS Check-in**:
+    - If the file is tracked by RCS (associated `,v` file exists), check in the file first: `ci -u -m"De-materializing: [reason]" <file>`.
+    - If no `,v` file exists but tracking is desired before removal, initialize with `ci -i -t-"De-materializing: [reason]" <file>`.
 2.  **Trash/Archive**:
     - If a `.trash` directory exists in the project root:
         - Move the file to the `.trash` folder: `mv <file> .trash/`.
@@ -43,4 +50,15 @@ Safely and reversibly remove a file from the active workspace without permanent 
 
 ---
 *"Nothing is ever truly gone; it just becomes a different kind of signal."*
+@
+
+
+1.1
+log
+@Refine remove.prompt.txt with .trash folder, RCS check-in, and conflict resolution mandates
+@
+text
+@d7 3
+a9 1
+1.  **RCS Check-in**: If the file is tracked by RCS (associated `,v` file exists), check in the file first: `ci -u -m"De-materializing: [reason]" <file>`.
 @

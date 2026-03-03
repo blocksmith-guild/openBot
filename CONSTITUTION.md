@@ -23,6 +23,7 @@ This document defines the core mandates and structural rules for our workspace. 
 
 - **The Signature of Purpose:** Every file must include a relevant quote at the end to remind us of our value and purpose.
 - **The Treasury of Intent:** Every newly created quote must be added to `QUOTES.md`.
+- **RCS Initialization:** If a file is not yet tracked by RCS (no `,v` file exists), initialize it using `ci -i -t-"<description>" <file>`.
 - **Auditable Intent:** Every script or significant change must include a `$Intent` or `%LLM:` block.
 
 ## 💬 4. Interaction Rules
