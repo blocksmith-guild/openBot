@@ -24,7 +24,7 @@ Every agent must have a `SOUL.md` defining its ontological purpose.
 
 - **File Naming:** Use `kebab-case.md` for documents and `snake_case.pl` for scripts.
 - **Markdown:** Use tables for comparisons. Use fenced code blocks with language hints.
-- **Documentation:** Every script must start with a `$Intent` or `%LLM:` block.
+- **Documentation:** Every script must start with an `$Intent` block or an `%LLM:` evolution anchor. Never remove these tags; transform them to guide future architectural refinements.
 - **Versioning:** Use `version.pl` for build numbers. Never manually increment.
 
 ## 📋 4. Review Checklist (The "Blink" Test)

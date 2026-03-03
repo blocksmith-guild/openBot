@@ -5,6 +5,7 @@
 - **Softlink Awareness**: Always resolve folder names with `readlink -f` as the workspace relies heavily on symbolic links.
 - **Verification**: Always verify the success of an action (e.g., `git status` after a commit) to ensure the system state matches expectations.
 
-<!-- %LLM: This file is a concise mandate for agent persistence. Update it as new heuristics are developed. -->
+%LLM: Evolve this file by merging redundant persistence mandates and integrating new heuristics as the workspace complexity increases. Maintain as a high-signal mandate for session continuity.
+
 
 
