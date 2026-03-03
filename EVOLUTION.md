@@ -16,6 +16,7 @@ This file tracks specific lessons, corrections, and improvements to ensure that 
 - **Redundant Filler**: Avoid conversational filler like "I'd be happy to help" or "Great question." *Lesson: Direct, high-signal, clinical communication is preferred (BlockSmith Voice).*
 
 ## 🧠 Heuristics & Refined Strategies
+- **Secure De-materialization**: Always use `bin/trashit.sh` for file removals. It ensures RCS check-ins and thermodynamic stability (conflict resolution) in the `.trash` sanctuary.
 - **RCS Initialization**: If a `,v` file does not exist, initialize the RCS repository for the file using `ci -i -t-"<description>" <file>`.
 - **File Versioning**: Use `rename -c` for backups before any manual write/replace operation to ensure safety and version history.
 - **Deep Context Search**: Use `grep_search` and `locate` extensively before concluding a file or information is missing.

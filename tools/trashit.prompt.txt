@@ -1,16 +1,17 @@
 # TOOL: trash file (trashit)
 
 ## INTENT
-Move a file to a dedicated trash directory (`~/.trash/`) to clear the workspace while keeping it accessible for recovery.
+Move a file to the `.trash` sanctuary using the `bin/trashit.sh` script to ensure auditable, reversible de-materialization.
 
 ## STRATEGY (The "Waste Management" Phase)
-1.  **Define Target**: Set `TRASH_DIR` to `/home/michelc/.trash/` (create it if missing).
-2.  **Move & Version**: Run `mv <file> ${TRASH_DIR}/<file>_$(date +%s)`.
-3.  **Cleanup Verification**: Run `ls <file>` to confirm it's no longer in the active path.
+1.  **Execute Protocol**: Run `./bin/trashit.sh <file>`.
+2.  **RCS Awareness**: The script will automatically check in any RCS-tracked files before trashing.
+3.  **Conflict Resolution**: The script handles name collisions using the `*~n` versioning format.
+4.  **Verification**: Confirm the file is no longer in the active workspace path.
 
 ## MANDATE
-- **Temporary Holding**: Trash is for things that are no longer part of the current `TELOS` but might be needed for retrospective analysis.
-- **Privacy Check**: Ensure no PII is trashed in an unencrypted state if possible (though `~/.trash` is locally private).
+- **Zero Destruction**: Never use `rm`. Always use `trashit.sh`.
+- **Temporal Clarity**: The `.trash` folder is for items that are no longer part of the current `TELOS` but retain historical value.
 
 ---
 *"The landfill of today is the archeology of tomorrow."*

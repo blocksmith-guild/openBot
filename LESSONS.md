@@ -11,6 +11,9 @@ This document is the authoritative, chronological record of all technical, archi
 - **Organic Growth**: Agents are grown, not just built. Optimization through real-world interaction and iterative prompt engineering is mandatory for utility.
 
 ### [2026-03-03]
+- **Lesson: Secure De-materialization (trashit.sh)**
+  - **Problem**: Manually moving files to a trash directory is prone to audit gaps and filename conflicts.
+  - **Solution**: Implemented `bin/trashit.sh`, which automates RCS check-ins, handles `*~n` conflict resolution, and ensures all "de-materialized" files are safely archived in a `.trash` sanctuary.
 - **Lesson: Proper RCS Initialization**
   - **Problem**: Attempting to check in a file without an existing `,v` file requires an initial description.
   - **Solution**: Use `ci -i -t-"<description>" <file>` to initialize the RCS tracking with a proper file header description.
